@@ -4,8 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Il mio mini sito</title>
-</head>
-<body>
-    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #84b9eb;
+            padding: 40px;
+            text-align: center;
+            border-left: 0px solid #fff;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        main {
+            margin-top: 100px;
+            padding: 20px;
+        }
+h2 {
+            margin-top: 200px;
+            color: #333;
+            font-size: 50px;
+            
+        }
+        
+        footer {
+            background-color: #f1f1f1;
+            padding: 40px;
+            text-align: center;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        nav a:hover {
+            text-decoration: underline;
+}
+        
+</style>
+        </head>
+<body class="body">
+    <header class="header">
+        <h1>Benvenuti nel mio mini sito</h1>
+        <p>Questo è un esempio di un semplice sito web con HTML e CSS.</p>
+        <nav >
+                <a href="index.html">Home</a>
+                <a href="about.html">Su di me</a>
+                <a href="contact.html">Contatti</a>
+            
+        </nav>
+    </header>
+    <main class="main">
+        <section>
+            <h2 class="h2">Chi sono</h2>
+            <p>Mi chiamo Sara e sono un'aspirante <strong>frontend</strong> e <em>nerd</em> appassionata.</p>
+        </section>
+        <section>
+            <img src="benjamin-sow-rd3c5yP0uwE-unsplash.jpg" alt="Immagine di esempio"  max width=50% height="auto">
+            <p>Un saluto a tutti.</p>
+        </section>
+        <section>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Video di esempio" 
+                    width="300" 
+                    height="150" 
+                    allowfullscreen></iframe>
+        </section>
+        </main>
+<footer class="footer">
+    <p>&copy; 2025 Sara. Tutti i diritti riservati.
+        Seguimi su 
+        <a href="https://github.com/SaraPrioriello" target="_blank" rel="noopener noreferrer">GitHub</a> 
+    </p>
+</footer>
 </body>
 </html>
