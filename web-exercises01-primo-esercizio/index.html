@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Git</title>
+
+  <style>
+    body { background: #9ee7e7; font-family: system-ui, sans-serif; }
+    h1 { color: blueviolet; }
+    .container { display: flex; gap: 40px; align-items: center; }
+    .icon-title { color: blueviolet; margin: 0 0 8px; }
+     .heart {
+      animation: pulse 1s infinite;
+      transform-origin: center; /* centro dell'SVG */
+    }
+    @keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.eye-wink {
+  animation: wink 2s infinite;
+  transform-origin: center;
+}
+
+@keyframes wink {
+  0%, 20%, 100% { transform: scaleY(1); }   /* occhio aperto */
+  10% { transform: scaleY(0.1); }           /* occhio chiuso */
+}
+
+  </style>
+</head>
+<body>
+  <h1>Sto imparando a gestire Git e le SVG</h1>
+
+  <div class="container">
+    <div>
+      <h3 class="icon-title">Smile Icon</h3>
+      <svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="black" stroke-width="4" fill="yellow" />
+        <circle class="eye-wink" cx="35" cy="35" r="5" fill="black" />
+        <circle cx="65" cy="35" r="5" fill="black" />
+        <path d="M35 65 Q50 80 65 65" stroke="black" stroke-width="4" fill="transparent" />
+      </svg>
+    </div>
+
+    <div>
+      <h3 class="icon-title">Heart Icon</h3>
+      <svg id="heart" class="heart" viewBox="0 0 24 24" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                 2 6 4 4 6.5 4c1.74 0 3.41 1.01 4.22 2.53
+                 C11.09 5.01 12.76 4 14.5 4 17 4 19 6 19 8.5
+                 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              fill="red"/>
+      </svg>
+    </div>
+  </div>
+  <script>
+  const heart = document.querySelector("#heart path");
+  const colors = ["red", "purple", "blue", "green"];
+  let i = 0;
+
+  heart.addEventListener("click", () => {
+    i = (i + 1) % colors.length;   // cambia colore ciclicamente
+    heart.setAttribute("fill", colors[i]);
+  });
+</script>
+
+</body>
+</html>
+
