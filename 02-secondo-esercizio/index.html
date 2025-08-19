@@ -150,18 +150,18 @@
     Salta al contenuto
   </a>
 
-  <header>
+  <header id="home">
     <h1>Benvenuti nel mio mini sito</h1>
     <p>Un esempio semplice con HTML semantico e un tocco di CSS.</p>
     <nav aria-label="Navigazione principale">
-      <a href="index.html">Home</a>
-      <a href="about.html">Su di me</a>
-      <a href="contact.html">Contatti</a>
+      <a href="#">Home</a>
+      <a href="#about">Su di me</a>
+      <a href="#contact">Contatti</a>
     </nav>
   </header>
 
   <main id="contenuto">
-    <section aria-labelledby="chi-sono">
+    <section id="about">
       <h2 id="chi-sono">Chi sono</h2>
       <p>
         Mi chiamo Sara e sono un'aspirante <strong>frontend</strong> e <em>nerd</em> appassionata. Ho studiato storia dell'arte e ora mi dedico allo sviluppo web.
@@ -172,15 +172,31 @@
         <span>— <cite>I detti attribuiti ad Einstein</cite></span>
       </p>
 
+      <article>
+        <h3>Perché questo sito?</h3>
+        <p>
+          Ho creato questo sito per esercitarmi con HTML semantico e CSS. Volevo mostrare le mie competenze in modo semplice e diretto, utilizzando tag appropriati per migliorare l'accessibilità e la comprensibilità del contenuto.
+        </p>
+      </article>
+
+      <article>
+        <h3>Obiettivi futuri</h3>
+        <p>
+          In futuro, vorrei espandere questo sito con più sezioni, come un portfolio dei miei progetti, un blog e una sezione dedicata alle mie passioni. Voglio anche migliorare il design e l'usabilità, rendendolo più interattivo e coinvolgente.
+        </p>
+      </article>
+
       <dl class="info">
         <dt>Nome</dt>
         <dd>Sara</dd>
 
         <dt>Cognome</dt>
         <dd>Prioriello</dd>
+        <dt>Data di nascita</dt>
+        <dd>15 luglio 1996</dd>
 
         <dt>Professione</dt>
-        <dd>Frontend Developer e Storica dell'arte</dd>
+        <dd>Aspirante Frontend Developer e Storica dell'arte</dd>
       </dl>
     </section>
 
@@ -212,8 +228,8 @@
     </section>
   </main>
 
-  <footer>
-    <address>
+  <footer id="contact">
+    <address >
       <p><strong>Sara Prioriello</strong><br>
       Via Esempio 123, Roma, Italia<br></p>
       <p>Email: <a href="mailto:s.prioriello96@gmail.com">s.prioriello96@gmail.com
