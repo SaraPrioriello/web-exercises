@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Valutazione di Gradimento</h1>
+    <p>Grazie per aver visitato il nostro museo. Ci piacerebbe conoscere la tua opinione! Per favore, compila il seguente modulo per inviare il tuo feedback. Aiutaci a migliorare, per noi la tua opinione è importante.</p>
+    <fieldset>
+        <form action="https://example.com/submit" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" size="20" required>
+            <label for="surname">Cognome:</label>
+            <input type="text" id="surname" name="surname" size="20" required>
+            <label for="age">Età:</label>
+            <input type="number" id="age" name="age" min="0" max="100" required>
+            <label for="sex">Sesso:</label>
+            <select id="sex" name="sex" required>
+                <option value="M">M</option>
+                <option value="F">F</option>
+                <option value="O">Altro</option>
+            </select>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>            
+            </fieldset>
+            <br>
+            <fieldset>
+            <legend>Come ci hai conosciuti?</legend>  
+            <label for="source">Fonte:</label>
+            <input type="checkbox" id="source1" name="source" value="social_media">
+            <label for="source1">Social Media</label>
+            <input type="checkbox" id="source2" name="source" value="friends">
+            <label for="source2">Amici</label>
+            <input type="checkbox" id="source3" name="source" value="advertisement">
+            <label for="source3">Pubblicità</label>
+            <input type="checkbox" id="source4" name="source" value="other">
+            <label for="source4">Altro</label>
+            <textarea id="source_other" name="source_other" rows="2" cols="50" placeholder="Se altro, specifica..."></textarea>
+            </fieldset><br>
+            <fieldset>
+            <legend>Valutazione del museo:</legend>
+            <input type="radio" id="excellent" name="rating" value="excellent" required>
+            <label for="excellent">Eccellente</label>
+            <input type="radio" id="good" name="rating" value="good">
+            <label for="good">Buono</label>
+            <input type="radio" id="average" name="rating" value="average">
+            <label for="average">Nella media</label>    
+            <input type="radio" id="poor" name="rating" value="poor">
+            <label for="poor">Scarso</label>    
+            <input type="radio" id="terrible" name="rating" value="terrible">
+            <label for="terrible">Terribile</label> 
+            <legend>Commenti:</legend>
+            <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Inserisci i tuoi commenti qui..."></textarea>
+            </fieldset><br> 
+            <fieldset>
+            <legend>Consiglieresti il museo ad altri?</legend>
+            <input type="radio" id="yes" name="recommend" value="yes" required>
+            <label for="yes">Sì</label>
+            <input type="radio" id="no" name="recommend" value="no">
+            <label for="no">No</label>
+            </fieldset><br>
+            <fieldset>
+            <legend>Valutazione della visita:</legend>
+            <input type="radio" id="visit_excellent" name="visit_rating" value="excellent" required>
+            <label for="visit_excellent">Eccellente</label> 
+            <input type="radio" id="visit_good" name="visit_rating" value="good">
+            <label for="visit_good">Buono</label>
+            <input type="radio" id="visit_average" name="visit_rating" value="average">
+            <label for="visit_average">Nella media</label>
+            <input type="radio" id="visit_poor" name="visit_rating" value="poor">
+            <label for="visit_poor">Scarso</label>
+            <input type="radio" id="visit_terrible" name="visit_rating" value="terrible">
+            <label for="visit_terrible">Terribile</label>
+            <textarea id="visit_comments" name="visit_comments" rows="4" cols="50" placeholder="Inserisci i tuoi commenti sulla visita..."></textarea>
+            </fieldset><br>
+            <fieldset>
+            <legend>Valutazione del personale:</legend>
+            <input type="radio" id="staff_excellent" name="staff_rating" value="excellent" required>
+            <label for="staff_excellent">Eccellente</label>             
+            <input type="radio" id="staff_good" name="staff_rating" value="good">
+            <label for="staff_good">Buono</label>
+            <input type="radio" id="staff_average" name="staff_rating" value="average">
+            <label for="staff_average">Nella media</label>
+            <input type="radio" id="staff_poor" name="staff_rating" value="poor">
+            <label for="staff_poor">Scarso</label>
+            <input type="radio" id="staff_terrible" name="staff_rating" value="terrible">
+            <label for="staff_terrible">Terribile</label>
+            <textarea id="staff_comments" name="staff_comments" rows="4" cols="50" placeholder="Inserisci i tuoi commenti sul personale..."></textarea>
+            </fieldset><br>
+            <fieldset>
+            <legend>Cosa ti è piaciuto di più del museo?</legend>
+            <input type="checkbox" id="favorite1" name="favorite" value="exhibits">
+            <label for="favorite1">Esposizioni</label>
+            <input type="checkbox" id="favorite2" name="favorite" value="guides">
+            <label for="favorite2">Guide</label>
+            <input type="checkbox" id="favorite3" name="favorite" value="activities">
+            <label for="favorite3">Attività</label>
+            <input type="checkbox" id="favorite4" name="favorite" value="services">
+            <label for="favorite4">Servizi</label>
+            <input type="checkbox" id="favorite5" name="favorite" value="staff">
+            <label for="favorite5">Accoglienza</label>
+            <input type="checkbox" id="favorite6" name="favorite" value="accessibility">
+            <label for="favorite6">Accessibilità</label>
+            <input type="checkbox" id="favorite7" name="favorite" value="communication">
+            <label for="favorite7">Comunicazione</label>
+            <input type="checkbox" id="favorite8" name="favorite" value="other">
+            <label for="favorite8">Altro</label>
+            <textarea id="favorite_other" name="favorite_other" rows="2" cols="50" placeholder="Se altro, specifica..."></textarea>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Cosa ti è piaciuto di meno del museo?</legend>
+            <input type="checkbox" id="favorite1" name="favorite" value="exhibits">
+            <label for="favorite1">Esposizioni</label>
+            <input type="checkbox" id="favorite" name="favorite" value="guides">
+            <label for="favorite">Guide</label>
+            <input type="checkbox" id="favorite3" name="favorite" value="activities">
+            <label for="favorite3">Attività</label>
+            <input type="checkbox" id="favorite4" name="favorite" value="services">
+            <label for="favorite4">Servizi</label>
+            <input type="checkbox" id="favorite5" name="2favorite" value="staff">
+            <label for="favorite5">Accoglienza</label>
+            <input type="checkbox" id="favorite6" name="favorite" value="accessibility">
+            <label for="favorite6">Accessibilità</label>
+            <input type="checkbox" id="favorite7" name="favorite" value="communication">
+            <label for="favorite7">Comunicazione</label>
+            <input type="checkbox" id="favorite8" name="favorite" value="other">
+            <label for="favorite8">Altro</label>
+            <textarea id="favorite_other" name="favorite_other" rows="2" cols="50" placeholder="Se altro, specifica..."></textarea>
+            </fieldset> 
+            <br>
+            <fieldset>
+                <legend>Come valuteresti l'impatto tecnologico del museo?</legend>
+            <input type="radio" id="tech_excellent" name="tech_rating" value="excellent" required>
+            <label for="tech_excellent">Eccellente</label>  
+            <input type="radio" id="tech_good" name="tech_rating" value="good">
+            <label for="tech_good">Buono</label>
+            <input type="radio" id="tech_average" name="tech_rating" value="average">
+            <label for="tech_average">Nella media</label>
+            <input type="radio" id="tech_poor" name="tech_rating" value="poor">
+            <label for="tech_poor">Scarso</label>
+            <input type="radio" id="tech_terrible" name="tech_rating" value="terrible">
+            <label for="tech_terrible">Terribile</label>
+            <textarea id="tech_comments" name="tech_comments" rows="4" cols="50" placeholder="Inserisci i tuoi commenti sull'impatto tecnologico..."></textarea>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Hai visitato il museo in un evento speciale?</legend>
+                <input type="radio" id="event_yes" name="event_visit" value="yes" required>
+                <label for="event_yes">Sì</label>
+                <input type="radio" id="event_no" name="event_visit" value="no">
+                <label for="event_no">No</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Hai partecipato a un tour guidato?</legend>
+                <input type="radio" id="tour_yes" name="guided_tour" value="yes" required>
+                <label for="tour_yes">Sì</label>
+                <input type="radio" id="tour_no" name="guided_tour" value="no">
+                <label for="tour_no">No</label>
+            </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Prima di visitare il museo conoscevi il suo reperto più importante?</legend>
+                    <input type="radio" id="relic_yes" name="relic_knowledge" value="yes" required>
+                    <label for="relic_yes">Sì</label>
+                    <input type="radio" id="relic_no" name="relic_knowledge" value="no">
+                    <label for="relic_no">No</label>
+                </fieldset>
+                <br>
+                <fieldset>
+                <legend>Hai suggerimenti per migliorare il museo?</legend>
+                <textarea id="suggestions" name="suggestions" rows="4" cols="50" placeholder="Inserisci i tuoi suggerimenti qui..."></textarea>
+        </fieldset>
+            <br>
+            <fieldset>
+                <legend>Vuoi ricevere aggiornamenti via email?</legend>
+                <input type="checkbox" id="updates" name="updates" value="yes">
+                <label for="updates">Sì, vorrei ricevere aggiornamenti</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Accetto i termini e le condizioni</legend>
+                <input type="checkbox" id="terms" name="terms" value="accepted" required>
+                <label for="terms">Accetto</label>
+                <input type="checkbox" id="terms" name="terms" value="not_accepted">
+                <label for="terms">Non accetto</label>
+                </fieldset>
+            <br>
+            <fieldset>
+            <button type="submit" value="Invia Feedback">Invia</button>
+            <button type="reset" value="Resetta Modulo">Resetta</button>
+            <button type="button" value="Annulla">Annulla</button>
+        
+    </fieldset></form>
+</body>
+</html>
