@@ -10,3 +10,8 @@ Ogni esercizio ha la sua cartella con un file `index.html` (e se serve altri fil
 
 ## 🔗 Esercizi pubblicati - HTML e CSS
 - [04 - Quarto esercizio](https://saraprioriello.github.io/web-exercises/04-quarto-esercizio/) 
+- [05 - Quinto esercizio](https://saraprioriello.github.io/web-exercises/05-quinto-esercizio/) 
+
+## 🔗 Esercizio extra - Biglietto da visita
+- [00 - Extra esercizio](https://saraprioriello.github.io/web-exercises/00-extra-esercizio/) 
+
