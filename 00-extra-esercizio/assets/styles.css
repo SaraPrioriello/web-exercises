@@ -1,0 +1,151 @@
+:root{
+  --bg:#0F1116; --grid:#1A1E27; --ink:#EAEAEA;
+  --accent:#00E5FF; --accent2:#FF3D81;
+  --card:#141823; --radius:18px; --shadow:0 12px 28px rgba(0,0,0,.4);
+}
+
+body{
+  margin:0;
+  background:
+    linear-gradient(0deg, var(--bg), var(--bg)),
+    /* griglia sottile */
+    radial-gradient(circle at 0 0, transparent 0 7px, var(--grid) 8px) top left/32px 32px repeat;
+  color: var(--ink);
+  font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+  line-height:1.5;
+  padding:28px;
+}
+
+/* Card con bordo neon */
+.business-card, .social-media{
+  width: min(380px, 92vw);
+  margin: 24px auto 12px;
+  padding: 22px 20px;
+  background: var(--card);
+  color: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+/* Headline misto serif/mono */
+.full-name{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px; font-weight: 700; letter-spacing:.6px;
+  text-shadow: 0 0 8px rgba(0,229,255,.25);
+  margin: 6px 0 4px;
+}
+.designation,.company{
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase; letter-spacing: .08em;
+  font-size: 12.5px; color: #9EC9FF;
+}
+
+/* Immagine con bordo neon e lieve glitch */
+.profile-image{
+  display:block;
+  max-width:100%;
+  border-radius: 100%;
+  border: 2px solid var(--accent);
+  box-shadow:
+    0 0 16px rgba(0,229,255,.35),
+    0 8px 24px rgba(0,0,0,.5);
+  margin: 0 auto 12px;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+/* Separator linea laser */
+hr{
+  height:2px; border:0; margin: 14px 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 10px rgba(0,229,255,.4);
+}
+
+/* Social come chip neon */
+.social-media h2{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  color:#EAF6FF;
+  margin-top: auto;
+}
+.social-media a{
+  display:inline-block;
+  padding:8px 14px;
+  margin:6px 6px 0;
+  border:1.5px solid var(--accent);
+  border-radius: 999px;
+  color:var(--ink);
+  text-decoration:none;
+  transition: transform .08s ease, background .18s ease, color .18s ease, border-color .18s, box-shadow .18s;
+}
+.social-media a:hover{
+  background: var(--accent);
+  color:#0F1116;
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(0,229,255,.6);
+  transform: translateY(-5px);
+}
+.social-media a:focus-visible{
+  outline:3px solid #fff;
+  box-shadow:0 0 0 4px var(--accent2);
+  border-color:transparent;
+}
+
+a {
+    text-decoration: none; 
+    color: var(--ink);
+}
+
+a:hover {
+    text-decoration: underline; 
+    color: var(--accent);
+}
+
+.logo-letters{ display:inline-flex; gap:.02em; text-decoration:none; color:var(--ink); }
+.logo-letters span{ display:inline-block; transition: transform .22s ease, color .22s ease; }
+.logo-letters:hover span,
+.logo-letters:focus-visible span{ color: var(--accent); }
+
+/* effetto “onda” con ritardi */
+.logo-letters:hover span{ transform: translateY(-6px) rotate(-2deg); }
+.logo-letters:focus-visible{ outline:3px solid #fff; box-shadow:0 0 0 4px var(--accent); border-radius:6px; }
+.logo-letters span:nth-child(1){ transition-delay: 0ms; }
+.logo-letters span:nth-child(2){ transition-delay: 30ms; }
+.logo-letters span:nth-child(3){ transition-delay: 60ms; }
+.logo-letters span:nth-child(4){ transition-delay: 90ms; }
+.logo-letters span:nth-child(5){ transition-delay: 120ms; }
+.logo-letters span:nth-child(6){ transition-delay: 150ms; }
+.logo-letters span:nth-child(7){ transition-delay: 180ms; }
+.logo-letters span:nth-child(8){ transition-delay: 210ms; }
+.logo-letters span:nth-child(9){ transition-delay: 240ms; }
+
+/* Fallback statico se l'animazione non è supportata */
+.business-card, .social-media {
+  border: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+/* Animazione angolo (custom property animabile) */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.business-card, .social-media {
+  border: 3px solid transparent;
+  border-radius: var(--radius);
+  /* doppio background: il contenuto e il bordo animato */
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    conic-gradient(from var(--angle),
+      var(--accent),
+      var(--accent2),
+      var(--accent)
+    ) border-box;
+  animation: spin-border 6s linear infinite;
+}
+
+@keyframes spin-border {
+  to { --angle: 1turn; }
+}
