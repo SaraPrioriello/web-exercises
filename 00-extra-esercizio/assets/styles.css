@@ -151,7 +151,28 @@ a:hover {
 }
 
 
+/* 1) box model robusto */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* 2) sizing della card: niente overflow */
+.business-card,
+.social-media {
+  width: 100%;
+  max-width: 380px;         /* o 420px se vuoi più grande */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3) aggiusta i padding su schermi piccoli */
 @media (max-width: 420px){
-  .business-card, .social-media { width: 100%; }
-  body { padding: 16px; } /* meno padding ai bordi */
+  body { padding: 12px; }   /* prima era 28px, spingeva fuori tutto */
+  .business-card,
+  .social-media { max-width: 100%; }  /* usa tutta la larghezza disponibile */
+}
+
+/* (opzionale) bordo più sottile su telefoni molto piccoli */
+@media (max-width: 360px){
+  .business-card,
+  .social-media { border-width: 2px; }
 }
