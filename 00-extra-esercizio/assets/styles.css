@@ -149,3 +149,9 @@ a:hover {
 @keyframes spin-border {
   to { --angle: 1turn; }
 }
+
+
+@media (max-width: 420px){
+  .business-card, .social-media { width: 100%; }
+  body { padding: 16px; } /* meno padding ai bordi */
+}
