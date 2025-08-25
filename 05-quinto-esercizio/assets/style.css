@@ -1,0 +1,148 @@
+/* =========================
+   Tema & scale (variabili)
+========================= */
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;          /* colore principale */
+  --ring: #60a5fa;            /* focus ring */
+  --radius: 14px;
+  --gap: 24px;
+}
+
+/* Dark mode auto */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0b1220;
+    --card: #101827;
+    --text: #e5e7eb;
+    --muted: #9aa4b2;
+    --accent: #3ba1ff;
+    --ring: #4aa3ff;
+  }
+}
+
+/* Base moderna */
+html { color-scheme: light dark; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(37,99,235,.08), transparent),
+              radial-gradient(900px 500px at 100% 0%, rgba(14,165,233,.07), transparent),
+              var(--bg);
+  color: var(--text);
+
+}
+
+/* Tipografia */
+
+/* Link moderni + accessibili */
+a{ text-decoration: none; color: inherit; }
+a:visited{ color: inherit; }
+a:hover, a:focus{ color: var(--accent); }
+a:focus-visible{
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+a:active{ opacity: .85; }
+
+/* Tipografia: una sola definizione */
+h1{
+  text-align:center;
+  font-weight:800;
+  font-size:clamp(28px,4vw,48px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  margin:32px auto 50px;
+  max-width:720px;      /* allinea con la lista */
+  padding:0 16px;
+}
+
+/* Contenitore lista */
+.todo-list{
+  list-style:none;
+  margin:24px auto;
+  padding:0 16px 48px;
+  max-width:720px;
+  display:grid;
+  gap:var(--gap);
+  font-size:20px;
+  line-height:1.4;
+  font-weight:500;
+  color:var(--text);
+  text-align:left;      /* testo delle card a sinistra */
+  justify-items:center; /* centra le card più strette */
+}
+
+/* Card: grid pulita, niente offset strani */
+.todo-list > li{
+  display:grid;
+  grid-template-columns:auto 1fr;  /* checkbox | label */
+  align-items:center;
+  gap:.75rem 1rem;
+  padding:14px 16px;
+  width:clamp(280px, 90%, 520px);  /* card più strette */
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--text) 12%, transparent);
+  border-radius:var(--radius);
+  box-shadow:0 1px 2px rgba(0,0,0,.05);
+  transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.todo-list > li:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 24px rgba(35, 174, 199, 0.1);
+}
+.todo-list > li:has(:focus-visible){
+  outline:3px solid var(--ring);
+  outline-offset:2px;
+}
+
+/* Checkbox brand */
+.todo-list input[type="checkbox"]{
+  accent-color:var(--accent);
+  inline-size:1.1rem;
+  block-size:1.1rem;
+}
+
+/* Stato completato */
+.todo-list > li input[type="checkbox"]:checked + label{
+  text-decoration:line-through;
+  opacity:.7;
+}
+.todo-list > li:has(> input[type="checkbox"]:checked){
+  background:color-mix(in oklab, var(--accent) 6%, var(--card));
+  border-color:color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+/* Sub-list: SEMPRE sotto, a tutta riga */
+.sub-item{
+  grid-column:1 / -1;
+  margin:.6rem 0 0 2rem;
+  padding:0;
+  display:grid;
+  gap:.5rem;
+  list-style: none;
+}
+.sub-item a.sub-item-link{
+  display:inline-flex;
+  align-items:center;
+  padding:.35rem .7rem;
+  border-radius:9999px;
+  border:1px solid color-mix(in oklab, var(--text) 12%, transparent);
+  background:color-mix(in oklab, var(--accent) 7%, var(--card));
+  transition:background-color .2s ease, border-color .2s ease, transform .12s ease, box-shadow .2s ease;
+}
+.sub-item a.sub-item-link:hover,
+.sub-item a.sub-item-link:focus-visible{
+  transform:translateY(-1px);
+  border-color:color-mix(in oklab, var(--accent) 35%, transparent);
+  box-shadow:0 8px 20px rgba(81, 168, 184, 0.12);
+}
+
+/* Evidenzia i link quando spunti l'attività */
+.todo-list > li:has(> input[type="checkbox"]:checked) .sub-item a.sub-item-link{
+  border-color:var(--accent);
+  box-shadow:0 0 0 2px color-mix(in oklab, var(--accent) 35%, transparent);
+}

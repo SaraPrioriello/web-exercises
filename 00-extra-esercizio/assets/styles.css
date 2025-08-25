@@ -151,28 +151,35 @@ a:hover {
 }
 
 
-/* 1) box model robusto */
+/* 1) Box model: la width include padding + border */
 html { box-sizing: border-box; }
 *, *::before, *::after { box-sizing: inherit; }
 
-/* 2) sizing della card: niente overflow */
+/* 2) Padding di pagina responsive + safe area iOS */
+:root { --page-pad: clamp(12px, 4vw, 24px); }
+body {
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+  overflow-x: hidden; /* evita scrollbar orizzontale di 1px */
+}
+@supports(padding: max(0px)) {
+  body {
+    padding-left: max(var(--page-pad), env(safe-area-inset-left));
+    padding-right: max(var(--page-pad), env(safe-area-inset-right));
+  }
+}
+
+/* 3) Le card non usano più vw: riempiono al 100% ma sono limitate */
 .business-card,
 .social-media {
   width: 100%;
-  max-width: 380px;         /* o 420px se vuoi più grande */
+  max-width: 360px;              /* prova 360–380px a gusto tuo */
   margin-left: auto;
   margin-right: auto;
+  border-width: 2px;             /* bordo un filo più sottile su mobile */
 }
 
-/* 3) aggiusta i padding su schermi piccoli */
-@media (max-width: 420px){
-  body { padding: 12px; }   /* prima era 28px, spingeva fuori tutto */
-  .business-card,
-  .social-media { max-width: 100%; }  /* usa tutta la larghezza disponibile */
-}
-
-/* (opzionale) bordo più sottile su telefoni molto piccoli */
-@media (max-width: 360px){
-  .business-card,
-  .social-media { border-width: 2px; }
+/* 4) Su telefoni molto stretti riduciamo ancora un filo */
+@media (max-width: 360px) {
+  .business-card, .social-media { max-width: calc(100% - 2px); }
 }
