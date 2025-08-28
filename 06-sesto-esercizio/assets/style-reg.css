@@ -160,6 +160,7 @@ form{
     height: 100%;
     background: rgba(255, 255, 255, 0.089);
     pointer-events: none;
+    opacity: 0;
 }
 
     
