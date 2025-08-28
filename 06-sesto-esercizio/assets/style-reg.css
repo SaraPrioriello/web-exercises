@@ -313,22 +313,3 @@ textarea {
     font-weight: 600;
 }
 
-/* --- Base mobile (≤480px) --- */
-
-/* --- tablet in su (≥640px) ripristina un po’ di aria --- */
-@media (min-width: 640px){
-  body{ padding: 24px;
-       padding: 32px;
-  background-attachment: scroll;
-  background-size: cover;           /* pieno schermo senza calcoli strani */
-  background-position: center top;
-  padding: 16px;                    /* respiro ai bordi */
-    inset: 0; 
-      }
-  .glass-container{ width: clamp(320px, 90vw, 560px); padding: 28px; }
-  .glass-container h1{ font-size: clamp(26px, 3.5vw, 32px); }
-  input, textarea, select{ font-size: 17px; padding: 14px 18px; }
-}
-
-
-
