@@ -321,6 +321,7 @@ body{
   background-size: cover;           /* pieno schermo senza calcoli strani */
   background-position: center top;
   padding: 16px;                    /* respiro ai bordi */
+    inset: 0;
 }
 
 .glass-container{
