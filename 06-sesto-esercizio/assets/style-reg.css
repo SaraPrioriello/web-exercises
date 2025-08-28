@@ -389,6 +389,6 @@ fieldset{
   .glass-container{ padding: 32px; }
 }
 
-@media (prefers-reduced-motion: reduce){
+@media {
   body{ animation: none !important; }
 }
