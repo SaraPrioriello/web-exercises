@@ -322,6 +322,7 @@ body{
   background-position: center top;
   padding: 16px;                    /* respiro ai bordi */
     inset: 0;
+    ani
 }
 
 .glass-container{
@@ -388,3 +389,6 @@ fieldset{
   .glass-container{ padding: 32px; }
 }
 
+@media (prefers-reduced-motion: reduce){
+  body{ animation: none !important; }
+}
